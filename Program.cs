@@ -33,14 +33,14 @@ namespace Lab10Movies
             };
             Console.WriteLine("Welcome to Movie Phone Online!");
             Console.WriteLine("----------------------------------");
-            Console.WriteLine("There are 5 genre's with 5 movies in each.");
+            Console.WriteLine("There are 5 genre categories with 5 movies in each.");
             Console.WriteLine();
 
             bool userContinue = true;
             while (userContinue)
             {
-                string userInput = GetUserInput("Which genre are you interested in seeing the list for? " +
-                    "\n1 = Animated\t2 = Drama \t3 = Science Fiction\t4 = Horror"); //user chooses the genre
+                string userInput = GetUserInput("Which genre category are you interested in seeing the list for? " +
+                    "\n1 = Animated\t2 = Drama \t3 = Science Fiction\t4 = Horror"); //user chooses the category
 
                 Console.WriteLine();
                 Movie.PrintMoviesByType(movieList, userInput);

@@ -32,10 +32,9 @@ namespace Lab10Movies
 
         public static void PrintMoviesByType(List<Movie> movieList, string categorySelected)
         {
-            categorySelected.ToLower();
             foreach (Movie movie in movieList)
             {
-                if (categorySelected == movie.category.ToLower() || categorySelected == movie.category)
+                if (categorySelected == movie.category)
                 {
                     Console.WriteLine($"{movie.title}");
                 }
@@ -44,5 +43,3 @@ namespace Lab10Movies
     }
 
 }
-
-

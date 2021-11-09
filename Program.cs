@@ -7,43 +7,46 @@ namespace Lab10Movies
     {
         static void Main(string[] args)
         {
-            List<Movie> movieList = new List<Movie>
+            List<Movie> movieList = new List<Movie> //stores a list of movies by category
             {
-                new Movie ("Cinderella", "Animated"),
-                new Movie ("Finding Nemo", "Animated"),
-                new Movie ("Snow White", "Animated"),
-                new Movie ("Toy Story", "Animated"),
-                new Movie ("Toy Story 2", "Animated"),
-                new Movie ("Beautiful Boy", "Drama"),
-                new Movie ("Gone with the Wind", "Drama"),
-                new Movie ("On Golden Pond", "Drama"),
-                new Movie ("Stand by Me", "Drama"),
-                new Movie ("West Side Story", "Drama"),
-                new Movie ("Blade Runner", "Scifi"),
-                new Movie ("Serenity", "Scifi"),
-                new Movie ("Star Wars", "Scifi"),
-                new Movie ("The New Mutants", "Scifi"),
-                new Movie ("The Tomorrow War", "Scifi"),
-                new Movie ("Candyman", "Horror"),
-                new Movie ("Friday the 13th", "Horror"),
-                new Movie ("Halloween", "Horror"),
-                new Movie ("IT the Movie", "Horror"),
-                new Movie ("Nightmare on Elm Street", "Horror"),
+                //1 = Animated 2 = Drama 3 = SciFi 4 = Horror
+                new Movie ("Cinderella", "1"),
+                new Movie ("Finding Nemo", "1"),
+                new Movie ("Snow White", "1"),
+                new Movie ("Toy Story", "1"),
+                new Movie ("Toy Story 2", "1"),
+                new Movie ("Beautiful Boy", "2"),
+                new Movie ("Gone with the Wind", "2"),
+                new Movie ("On Golden Pond", "2"),
+                new Movie ("Stand by Me", "2"),
+                new Movie ("West Side Story", "2"),
+                new Movie ("Blade Runner", "3"),
+                new Movie ("Serenity", "3"),
+                new Movie ("Star Wars", "3"),
+                new Movie ("The New Mutants", "3"),
+                new Movie ("The Tomorrow War", "3"),
+                new Movie ("Candyman", "4"),
+                new Movie ("Friday the 13th", "4"),
+                new Movie ("Halloween", "4"),
+                new Movie ("IT the Movie", "4"),
+                new Movie ("Nightmare on Elm Street", "4"),
             };
             Console.WriteLine("Welcome to Movie Phone Online!");
             Console.WriteLine("----------------------------------");
+            Console.WriteLine("There are 5 genre's with 5 movies in each.");
             Console.WriteLine();
 
             bool userContinue = true;
             while (userContinue)
             {
-                string userInput = GetUserInput("Which genre are you interested in?\nScifi\tDrama\tHorror\tAnimated");
+                string userInput = GetUserInput("Which genre are you interested in seeing the list for? " +
+                    "\n1 = Animated\t2 = Drama \t3 = Science Fiction\t4 = Horror"); //user chooses the genre
 
                 Console.WriteLine();
                 Movie.PrintMoviesByType(movieList, userInput);
                 Console.WriteLine();
 
-                userContinue = AnotherGenre("Would you like to see another genre? (y/n)", "n", "y");
+                userContinue = AnotherGenre("Would you like to see another genre? (y/n)", "n", "y"); //users asked if they want to continue.
             }
         }
 
